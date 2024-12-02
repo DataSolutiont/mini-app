@@ -1,5 +1,39 @@
-<div class="container">
+<div class="container mt-5">
   <header class="jumbotron">
-    <p>{{ content }}</p>
+    <h1 class="display-4">Админская панель</h1>
+    <p class="lead">{{ content }}</p>
+    <hr class="my-4">
   </header>
+
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Поиск по имени кандидата..." [(ngModel)]="filterValue">
+  </div>
+
+  <button class="btn btn-primary mb-3" (click)="toggleResponses()">
+    {{ showResponses ? 'Скрыть' : 'Показать' }} отклики
+  </button>
+
+  <div *ngIf="showResponses" class="card">
+    <div class="card-header">
+      <h5 class="mb-0">Отклики</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Кандидат</th>
+            <th>Статус</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let response of filterResponses()">
+            <td>{{ response.id }}</td>
+            <td>{{ response.candidate }}</td>
+            <td>{{ response.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

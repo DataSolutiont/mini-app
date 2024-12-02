@@ -1,0 +1,37 @@
+.container {
+    max-width: 600px;
+  }
+  
+  .card {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+  
+  .card-header {
+    background-color: #f7f7f7;
+    font-weight: bold;
+  }
+  
+  .custom-file-upload {
+    display: inline-block;
+    padding: 12px 15px;
+    cursor: pointer;
+    border: 2px dashed #007bff;
+    border-radius: 5px;
+    text-align: center;
+    color: #007bff;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-file-upload input {
+    display: none;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #e7f1ff;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+  }
+  

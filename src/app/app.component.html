@@ -17,6 +17,9 @@
         <li class="nav-item" *ngIf="isLoggedIn">
           <a href="/user" class="nav-link" routerLink="user" (click)="handleLinkClick()">Пользователь</a>
         </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a href="/resume" class="nav-link" routerLink="resume" (click)="handleLinkClick">Отправить резюме</a>
+        </li>
       </ul>
 
       <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">

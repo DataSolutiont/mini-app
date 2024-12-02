@@ -14,6 +14,7 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { ResumeUploadComponent } from './app-resume-upload/app-resume-upload.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
+    ResumeUploadComponent,
   ],
   imports: [
     BrowserModule,

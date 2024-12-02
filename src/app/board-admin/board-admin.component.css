@@ -1,0 +1,14 @@
+.jumbotron {
+    background-color: #f7f7f7;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+  
+  .card {
+    margin-top: 1.5rem;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+  }
+  

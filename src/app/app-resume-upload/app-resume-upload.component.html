@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="mb-0">Загрузите ваше резюме</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onUpload()" #resumeForm="ngForm">
+        <div class="form-group">
+          <label for="file-upload" class="custom-file-upload">
+            <input type="file" id="file-upload" (change)="onFileSelected($event)" accept=".pdf" />
+            <i class="fa fa-cloud-upload"></i> Выберите PDF файл
+          </label>
+        </div>
+
+        <div *ngIf="selectedFile" class="mt-3">
+          <p><strong>Выбранный файл:</strong> {{ selectedFile.name }}</p>
+        </div>
+
+        <button class="btn btn-primary mt-3" [disabled]="!selectedFile">
+          Загрузить
+        </button>
+      </form>
+
+      <div *ngIf="uploadSuccess" class="alert alert-success mt-3">
+        Файл успешно загружен!
+      </div>
+      <div *ngIf="uploadError" class="alert alert-danger mt-3">
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>

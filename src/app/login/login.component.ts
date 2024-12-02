@@ -42,19 +42,21 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     const { username, password } = this.form;
-
+  
     this.authService.login(username, password).subscribe({
       next: data => {
         console.log(data); // Логируем данные для отладки
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
-
+  
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
-        
-
+  
+        // Измените здесь на 'resume'
+        this.router.navigate(['resume']);
+        // Или, если вам нужно перезагрузить страницу:
+        // this.reloadPage();
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -62,13 +64,11 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+  
 
 
   gotToSignup() {
     this.router.navigate(['home'])
   }
 
-  reloadPage(): void {
-    window.location.reload();
-  }
 }

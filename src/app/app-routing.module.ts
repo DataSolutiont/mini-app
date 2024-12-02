@@ -9,15 +9,17 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { AuthGuard } from './guard/auth.guard';
+import { ResumeUploadComponent } from './app-resume-upload/app-resume-upload.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { roles: ['CANDIDATE', 'HR'] }},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent,  canActivate: [AuthGuard], data: { roles: ['CANDIDATE'] } },
+  { path: 'user', component: BoardUserComponent,  canActivate: [AuthGuard]},
   { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent, canActivate:[AuthGuard], data: {roles:['HR']}},
+  { path: 'admin', component: BoardAdminComponent, canActivate:[AuthGuard]},
+  { path: 'resume', component: ResumeUploadComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
