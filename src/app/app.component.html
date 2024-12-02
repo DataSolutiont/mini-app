@@ -1,0 +1,45 @@
+<div id="app">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a href="#" class="navbar-brand">HR-BOT</a>
+
+    <button class="navbar-toggler" [class.open]="isMenuOpen" type="button" (click)="toggleMenu()" aria-controls="navbarNav" aria-expanded="isMenuOpen" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" [ngClass]="{'show': isMenuOpen}" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <a href="/admin" class="nav-link" routerLink="admin" (click)="handleLinkClick()">Admin Board</a>
+        </li>
+        <li class="nav-item" *ngIf="showModeratorBoard">
+          <a href="/mod" class="nav-link" routerLink="mod" (click)="handleLinkClick()">Moderator Board</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a href="/user" class="nav-link" routerLink="user" (click)="handleLinkClick()">Пользователь</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a href="/register" class="nav-link" routerLink="register" (click)="handleLinkClick()">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a href="/login" class="nav-link" routerLink="login" (click)="handleLinkClick()">Login</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a href="/profile" class="nav-link" routerLink="profile" (click)="handleLinkClick()">{{ username }}</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" (click)="logout(); handleLinkClick()">Выйти</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

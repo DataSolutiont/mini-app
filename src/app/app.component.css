@@ -1,0 +1,76 @@
+.navbar {
+    position: relative;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    position: relative;
+    display: block;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-toggler-icon::before {
+    top: -10px;
+  }
+  
+  .navbar-toggler-icon::after {
+    bottom: -10px;
+  }
+  
+  .navbar-collapse {
+    display: none;
+    transition: max-height 0.3s ease;
+  }
+  
+  .navbar-collapse.show {
+    display: block;
+    max-height: 300px; /* или более, если у вас много элементов */
+  }
+  
+  .navbar-toggler.open .navbar-toggler-icon {
+    background: transparent; /* скрыть основной цвет */
+  }
+  
+  .navbar-toggler.open .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .navbar-toggler.open .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+  
+  @media (min-width: 992px) {
+    .navbar-nav {
+      display: flex !important;
+    }
+  
+    .navbar-collapse {
+      display: flex !important;
+    }
+  
+    .navbar-toggler {
+      display: none;
+    }
+  }
+  

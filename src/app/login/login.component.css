@@ -1,0 +1,65 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #7b2ff7, #f107a3); /* Плавный градиент для фона */
+  color: #333; /* Цвет шрифта */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Центрирование по высоте */
+}
+
+.card-container {
+  max-width: 400px; /* Максимальная ширина карточки */
+  padding: 40px; /* Внутренние отступы */
+  background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон для карточки */
+  border-radius: 15px; /* Закругление углов */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
+  transition: transform 0.3s; /* Плавный переход для эффектов наведения */
+}
+
+.card-container:hover {
+  transform: translateY(-5px); /* Подъем карточки при наведении */
+}
+
+.card {
+  background-color: #f9f9f9; /* Светло-серый фон для внутренней карточки */
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  border-radius: 10px; /* Закругления для внутренней карточки */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Легкая тень */
+}
+
+label {
+  display: block; /* Занимает всю ширину */
+  margin-top: 10px; /* Отступ сверху */
+  font-weight: bold; /* Жирный шрифт */
+}
+
+.profile-img-card {
+  width: 96px; /* Ширина изображения профиля */
+  height: 96px; /* Высота изображения профиля */
+  margin: 0 auto 10px; /* Центрирование с отступом нижним */
+  display: block; /* Блочный элемент */
+  border-radius: 50%; /* Круглая форма */
+  border: 4px solid #007bff; /* Граница для изображения профиля */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Тень под изображением профиля */
+}
+
+/* Пример паспорта */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* Ширина 100% */
+  padding: 10px; /* Внутренние отступы */
+  margin-top: 5px; /* Вертикальный отступ */
+  border: 1px solid #ddd; /* Светлая граница */
+  border-radius: 5px; /* Закругление углов */
+  transition: border-color 0.3s; /* Плавный переход для границы */
+}
+
+input:focus {
+  border-color: #007bff; /* Цвет границы при фокусировке */
+  outline: none; /* Убираем стандартный контур */
+}
