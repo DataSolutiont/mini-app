@@ -5,7 +5,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
 import { AuthService } from '../_services/auth.service';
 import { catchError } from 'rxjs/operators'; // Импортируем catchError для обработки ошибок
 
-const API = 'http://46.148.227.14:8080/api/csv/saveCv/';
+const API = 'http://46.148.227.14:80/api/cvs/';
 
 @Injectable({
   providedIn: 'root'
