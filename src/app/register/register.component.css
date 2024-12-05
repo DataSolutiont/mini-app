@@ -1,26 +1,26 @@
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #7b2ff7, #f107a3); /* Плавный градиент */
-  color: #ffffff; /* Цвет текста */
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: #ffffff;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Центрирование по высоте */
+  height: 100vh;
 }
 
 .card-container {
   max-width: 400px;
-  padding: 40px 40px;
-  background-color: rgba(255, 255, 255, 0.95); /* Полупрозрачный фон для карточки */
-  border-radius: 15px; /* Увеличенные закругления */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Глубокая тень */
-  transition: transform 0.3s; /* Анимация при наведении */
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
 
 .card-container:hover {
-  transform: translateY(-5px); /* Подъем карточки при наведении */
+  transform: translateY(-5px);
 }
 
 .card {
@@ -34,48 +34,60 @@ body {
   margin: 0 auto 10px;
   display: block;
   border-radius: 50%;
-  border: 4px solid #007bff; /* Граница фотографии профиля */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Глубокая тень для профиля */
+  border: 4px solid #007bff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
-  text-align: center; /* Центрирование заголовка */
-  margin: 10px 0; /* Отступы */
+  text-align: center;
+  margin: 10px 0;
 }
 
 label {
   display: block;
   margin-top: 10px;
-  font-weight: bold; /* Отображение текста полужирным шрифтом */
-  color: #333; /* Тёмный цвет для читаемости */
+  font-weight: bold;
+  color: #333;
 }
 
 input[type=email], input[type=password] {
-  width: 100%; /* Ширина поля ввода */
-  padding: 10px; /* Отступы внутри поля */
-  margin-top: 5px; /* Отступ над полем */
-  border: 1px solid #ddd; /* Светлая граница */
-  border-radius: 5px; /* Закруглённые углы */
-  transition: border-color 0.3s; /* Плавный переход для границы */
+  width: 100%;
+  padding: 12px; /* Увеличенные отступы для удобства */
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  font-size: 16px; /* Увеличенный размер шрифта */
 }
 
 input[type=email]:focus, input[type=password]:focus {
-  border-color: #007bff; /* Цвет границы при фокусе */
-  outline: none; /* Убираем стандартный контур */
+  border-color: #007bff;
+  outline: none;
 }
 
 button {
-  background-color: #007bff; /* Основной цвет кнопки */
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 12px 25px; /* Увеличенные отступы для кнопки */
-  border-radius: 5px; /* Закругленные углы */
+  padding: 16px 30px; /* Увеличенные отступы для кнопки */
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px; /* Размер шрифта */
-  transition: background-color 0.3s, transform 0.3s; /* Плавный переход для фонового цвета и масштаба */
+  font-size: 18px; /* Увеличенный размер шрифта для кнопки */
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3; /* Новый цвет кнопки при наведении */
-  transform: scale(1.05); /* Немного увеличиваем кнопку при наведении */
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 600px) {
+  .card-container {
+    padding: 20px; /* Уменьшение отступов на мобильных устройствах */
+  }
+
+  input[type=email], input[type=password], button {
+    font-size: 16px; /* Уменьшение размера шрифта на мобильных устройствах */
+  }
 }
